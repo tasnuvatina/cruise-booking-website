@@ -58,6 +58,7 @@ nav ul li a:hover, a.active{
 }
 #booking{
     display: block;
+    padding: 20px;
 }
 .booking-form{
     

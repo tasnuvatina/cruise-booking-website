@@ -24,21 +24,15 @@ document.getElementById("minus-economy-class").addEventListener("click",function
 
 /************from booking page to confirmation page ***************/
 document.getElementById("book-btn").addEventListener("click",function(){
-
-    document.getElementById("passengerId").innerText=Math.round(Math.random()*100000000);
-    pageDiplayTransition("booking","confirmation-page");
-    takeValueToConfirm("book-from","from");
-    takeValueToConfirm("book-to","to");
-    takeValueToConfirm("book-date-start","date-start");
-    takeValueToConfirm("book-date-end","date-end");
-    takeValueToConfirm("first-class-ticket-count","first-class-ticket-final");
-    takeValueToConfirm("economy-class-ticket-count","economy-class-ticket-final");
-    subtotalAndTotal("subtotal-confirm","vat-confirm","total-confirm");
-
+    validateForm();
 })
 /************from confirmation page to booking page ***************/
 document.getElementById("start-over").addEventListener("click",function(){
     pageDiplayTransition("confirmation-page","booking")
+})
+/****************************reload page **************** */
+document.getElementById("save").addEventListener("click",function(){
+    location.reload();
 })
 
 
@@ -81,6 +75,33 @@ function takeValueToConfirm(bookingPageId,ConfirmPageId) {
     var bookingValue =document.getElementById(bookingPageId).value;
     document.getElementById(ConfirmPageId).innerText=bookingValue;
 }
+
+/**************************function for validating booking form inputs **************/
+function validateForm() {
+    var array = document.getElementsByClassName("inp-style");
+    outerloop: for (let i = 0; i < array.length; i++) {
+      const x = array[i];
+      if (x.value=="" || x.value=="0") {
+            alert("Please, fill in all the fields!!!");
+            break outerloop;
+        } 
+        takeAllValueToConfirm();
+    }        
+}
+
+/**************************function to take All input for confirmation page **************/
+function takeAllValueToConfirm() {
+    document.getElementById("passengerId").innerText=Math.round(Math.random()*100000000);
+    pageDiplayTransition("booking","confirmation-page");
+    takeValueToConfirm("book-from","from");
+    takeValueToConfirm("book-to","to");
+    takeValueToConfirm("book-date-start","date-start");
+    takeValueToConfirm("book-date-end","date-end");
+    takeValueToConfirm("first-class-ticket-count","first-class-ticket-final");
+    takeValueToConfirm("economy-class-ticket-count","economy-class-ticket-final");
+    subtotalAndTotal("subtotal-confirm","vat-confirm","total-confirm");
+}
+
 /**************************function for page transition ***********************/
 function pageDiplayTransition(idToDisappear,idToAppear) {
     document.getElementById(idToDisappear).style.display="none";
