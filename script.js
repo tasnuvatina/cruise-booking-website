@@ -31,7 +31,7 @@ document.getElementById("start-over").addEventListener("click",function(){
     pageDiplayTransition("confirmation-page","booking")
 })
 /****************************reload page **************** */
-document.getElementById("save").addEventListener("click",function(){
+document.getElementById("done").addEventListener("click",function(){
     location.reload();
 })
 
@@ -81,7 +81,7 @@ function validateForm() {
     var array = document.getElementsByClassName("inp-style");
     outerloop: for (let i = 0; i < array.length; i++) {
       const x = array[i];
-      if (x.value=="" || x.value=="0") {
+      if (x.value=="") {
             alert("Please, fill in all the fields!!!");
             break outerloop;
         } 
