@@ -103,6 +103,20 @@ nav ul li a:hover, a.active{
     margin: 10px 5px 0px 0px;
     word-spacing: 20px;
 }
+.plus-minus-btn button{
+    border: none;
+    background-color: #fff;
+}
+.plus-minus-btn button:active{
+    background-color: rgb(251, 187, 187);
+}
+.btn:not(:disabled):not(.disabled) {
+    cursor: pointer;}
+
+.plus-minus-btn button i{
+    color: #E33741;
+    font-size: 20px;
+}
 .booking-form .inputs{
     display: grid;
     grid-template-columns: 1fr 1fr;
