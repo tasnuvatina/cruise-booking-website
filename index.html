@@ -36,7 +36,7 @@
         </div>
 
 
-        <div class="booking-form">
+        <div id="booking" class="booking-form">
             <h3>Book Ocean Time</h3>
             <div class="input-group">
                 <label for="">Flying From</label>
@@ -108,6 +108,63 @@
                 </div>
             </div>
             <button class="btn-style">Book Now</button>
+        </div>
+        <div id="confirmation-form" class="booking-form">
+            <div id="confirm-header">
+                <h2>Your Booking is done!</h2>
+                <img src="images/logo.png" alt="">
+
+            </div>
+            
+            <div id="confirm-starting">
+                
+                <p>Your trip ID is #<span></span>.Please save these details for further steps.</p>
+                
+            </div>
+            <div >
+                <h3>You just booked a cruise to travel</h3>
+                <div id="destination-and-date">
+                    <p><span id="from">khulna</span> <i class="fas fa-long-arrow-alt-right"></i> <span id="to">khulna</span></p>
+                    <p>Date: <span id="date-start">01/01/2021</span> - <span id="date-end">01/01/2021</span></p>
+                </div>
+            </div>
+            <div id="ticket-detail">
+                <h3>Your ticket purchase</h3>
+                <p>Frist Class Ticket: $150 × <span id="first-clas-ticket-final"></span>  </p>
+                <p>economy Class Ticket: $100 × <span id="economy-clas-ticket-final"></span>  </p>
+            </div>
+            <div class="calculations">
+                <div class="amount">
+                    <div class="left">
+                        <p>Subtotal</p>
+                    </div>
+                    <div class="right">
+                        <p>$<span id="subtotal">00</span></p>
+                    </div>
+                </div>
+
+                <div class="amount">
+                    <div class="left">
+                        <p>Charge 10% VAT</p>
+                    </div>
+                    <div class="right">
+                        <p>$<span id="vat">00</span></p>
+                    </div>
+                </div>
+                <hr>
+                <div class="amount">
+                    <div class="left">
+                        <h4>Total</h4>
+                    </div>
+                    <div class="right">
+                        <p>$<span id="total">00</span></p>
+                    </div>
+                </div>
+            </div>
+            <div id="confirmation-footer">
+                <button class="btn-style confirm-btn">Start Over</button>
+                <button class="btn-style confirm-btn">Save</button>
+            </div>
         </div>
     </main>
 

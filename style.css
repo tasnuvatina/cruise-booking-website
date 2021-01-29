@@ -56,7 +56,11 @@ nav ul li a:hover, a.active{
     font-family: 'Bebas Neue', cursive;
     font-weight: 500;
 }
+#booking{
+    display: none;
+}
 .booking-form{
+    
     background-color: #fff;
     border: 1px solid #ddd;
     padding: 10px;
@@ -135,4 +139,39 @@ nav ul li a:hover, a.active{
 .amount{
     display: flex;
     justify-content: space-between;
+}
+
+
+#confirmation-form {
+    display:grid;
+    line-height: 2;
+    margin-left: 100px;
+    width: 80%;
+    padding: 20px;
+}
+
+#confirm-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#confirm-header h2 {
+    font-size: 2.3rem;
+    font-variant-caps: small-caps;
+    color: #E33741
+}
+#confirm-header img {
+    height: 100px;
+}
+#destination-and-date {
+display: flex;
+justify-content: space-between;
+}
+#confirmation-footer{
+    display: flex;
+justify-content: space-between;
+}
+
+.confirm-btn {
+    width: 40%;
 }
