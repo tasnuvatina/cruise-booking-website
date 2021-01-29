@@ -40,20 +40,22 @@
             <h3>Book Ocean Time</h3>
             <div class="input-group">
                 <label for="">Flying From</label>
-                <input class="inp-style" type="text" name="" placeholder="Dhake, Bangladesh">
+                <input id="book-from"class="inp-style" type="text"  placeholder="Dhake, Bangladesh" required>
             </div>
             <div class="input-group">
                 <label for="">Flying To</label>
-                <input class="inp-style" type="text" name="" placeholder="New York, United States">
+                <input id="book-to"class="inp-style" type="text" name="" placeholder="New York, United States">
             </div>
             <div class="inputs">
                 <div class="input-group">
-                    <label" for="">Departure</label>
-                    <input class="inp-style" type="date" name="">
+                    <form action="">
+                        <label" for="">Departure</label>
+                        <input id="book-date-start" class="inp-style" type="date" name="" required>
+                    </form>
                 </div>
                 <div class="input-group">
                     <label for="">Return</label>
-                    <input class="inp-style" type="date" name="">
+                    <input id="book-date-end" class="inp-style" type="date" name="">
                 </div>
             </div>
             <div class="input-group f-class">
@@ -107,9 +109,12 @@
                     </div>
                 </div>
             </div>
-            <button class="btn-style">Book Now</button>
+            <button id="book-btn"class="btn-style" >Book Now</button>
         </div>
-        <div id="confirmation-form" class="booking-form">
+
+<!--confirmation Section-->
+        <div id="confirmation-page">
+            <div id="confirmation-form" class="booking-form">
             <div id="confirm-header">
                 <h2>Your Booking is done!</h2>
                 <img src="images/logo.png" alt="">
@@ -118,20 +123,20 @@
             
             <div id="confirm-starting">
                 
-                <p>Your trip ID is #<span></span>.Please save these details for further steps.</p>
+                <p>Your trip ID is #<span id="passengerId"></span>.Please save these details for further steps.</p>
                 
             </div>
             <div >
                 <h3>You just booked a cruise to travel</h3>
                 <div id="destination-and-date">
-                    <p><span id="from">khulna</span> <i class="fas fa-long-arrow-alt-right"></i> <span id="to">khulna</span></p>
-                    <p>Date: <span id="date-start">01/01/2021</span> - <span id="date-end">01/01/2021</span></p>
+                    <p><span id="from"></span> <i class="fas fa-long-arrow-alt-right"></i> <span id="to"></span></p>
+                    <p>Date: <span id="date-start"></span> to <span id="date-end"></span></p>
                 </div>
             </div>
             <div id="ticket-detail">
                 <h3>Your ticket purchase</h3>
-                <p>Frist Class Ticket: $150 × <span id="first-clas-ticket-final"></span>  </p>
-                <p>economy Class Ticket: $100 × <span id="economy-clas-ticket-final"></span>  </p>
+                <p>Frist Class Ticket: $150 × <span id="first-class-ticket-final"></span>  </p>
+                <p>economy Class Ticket: $100 × <span id="economy-class-ticket-final"></span>  </p>
             </div>
             <div class="calculations">
                 <div class="amount">
@@ -139,7 +144,7 @@
                         <p>Subtotal</p>
                     </div>
                     <div class="right">
-                        <p>$<span id="subtotal">00</span></p>
+                        <p>$<span id="subtotal-confirm">00</span></p>
                     </div>
                 </div>
 
@@ -148,7 +153,7 @@
                         <p>Charge 10% VAT</p>
                     </div>
                     <div class="right">
-                        <p>$<span id="vat">00</span></p>
+                        <p>$<span id="vat-confirm">00</span></p>
                     </div>
                 </div>
                 <hr>
@@ -157,18 +162,20 @@
                         <h4>Total</h4>
                     </div>
                     <div class="right">
-                        <p>$<span id="total">00</span></p>
+                        <p>$<span id="total-confirm">00</span></p>
                     </div>
                 </div>
             </div>
             <div id="confirmation-footer">
-                <button class="btn-style confirm-btn">Start Over</button>
+                <button id="start-over" class="btn-style confirm-btn">Start Over</button>
                 <button class="btn-style confirm-btn">Save</button>
+            </div>
             </div>
         </div>
     </main>
 
 <script src="script.js"></script>
+
 </body>
 
 </html>

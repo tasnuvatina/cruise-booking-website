@@ -57,7 +57,7 @@ nav ul li a:hover, a.active{
     font-weight: 500;
 }
 #booking{
-    display: none;
+    display: block;
 }
 .booking-form{
     
@@ -141,7 +141,10 @@ nav ul li a:hover, a.active{
     justify-content: space-between;
 }
 
-
+/********************confirmation page style********************/
+#confirmation-page {
+    display:none;
+}
 #confirmation-form {
     display:grid;
     line-height: 2;
@@ -164,12 +167,13 @@ nav ul li a:hover, a.active{
     height: 100px;
 }
 #destination-and-date {
-display: flex;
-justify-content: space-between;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 #confirmation-footer{
     display: flex;
-justify-content: space-between;
+    justify-content: space-between;
 }
 
 .confirm-btn {

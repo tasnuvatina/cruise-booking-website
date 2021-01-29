@@ -2,25 +2,47 @@
 document.getElementById("plus-first-class").addEventListener("click",function(e){
 
     ticketCountFunction("first",true);
-    subtotalAndTotal();
+    subtotalAndTotal("subtotal","vat","total");
 })
 document.getElementById("minus-first-class").addEventListener("click",function(e){
 
     ticketCountFunction("first",false);
-    subtotalAndTotal();
+    subtotalAndTotal("subtotal","vat","total");
 })
 
 /***************Economy class ticket count********************** */
 document.getElementById("plus-economy-class").addEventListener("click",function(e){
 
     ticketCountFunction("economy",true);
-    subtotalAndTotal();
+    subtotalAndTotal("subtotal","vat","total");
 })
 document.getElementById("minus-economy-class").addEventListener("click",function(e){
 
     ticketCountFunction("economy",false);
-    subtotalAndTotal();
+    subtotalAndTotal("subtotal","vat","total");
 })
+
+/************from booking page to confirmation page ***************/
+document.getElementById("book-btn").addEventListener("click",function(){
+
+    document.getElementById("passengerId").innerText=Math.round(Math.random()*100000000);
+    pageDiplayTransition("booking","confirmation-page");
+    takeValueToConfirm("book-from","from");
+    takeValueToConfirm("book-to","to");
+    takeValueToConfirm("book-date-start","date-start");
+    takeValueToConfirm("book-date-end","date-end");
+    takeValueToConfirm("first-class-ticket-count","first-class-ticket-final");
+    takeValueToConfirm("economy-class-ticket-count","economy-class-ticket-final");
+    subtotalAndTotal("subtotal-confirm","vat-confirm","total-confirm");
+
+})
+/************from confirmation page to booking page ***************/
+document.getElementById("start-over").addEventListener("click",function(){
+    pageDiplayTransition("confirmation-page","booking")
+})
+
+
+//**********************************fucntions*******************************/
 
 /******************fuction for counting ticket numbers ********************** */
 function ticketCountFunction(className,isIncreased){
@@ -34,8 +56,8 @@ function ticketCountFunction(className,isIncreased){
 }
 
 /******************fuction for counting subtotal,vat and total price ********************** */
-function subtotalAndTotal(){
-    /**************subTotal ********************************/
+function subtotalAndTotal(Subtotal,Vat,Total){
+    /**************subTotal ***********/
     let firstClassTicketCount=parseInt(document.getElementById("first-class-ticket-count").value);
     let perFirstClassTicket=150;
     let FirstClassTicketPrice=firstClassTicketCount*perFirstClassTicket;
@@ -43,13 +65,25 @@ function subtotalAndTotal(){
     let perEconomyClassTicket=100;
     let economyClassTicketPrice=economyClassTicketCount*perEconomyClassTicket;
     let subTotal=FirstClassTicketPrice+economyClassTicketPrice;
-    document.getElementById("subtotal").innerText=subTotal;
+    document.getElementById(Subtotal).innerText=subTotal;
 
-    /***************10% vat***********************************/
+    /***************10% vat*********/
     let vat=parseFloat(subTotal*0.1); 
-    document.getElementById("vat").innerText=vat;
+    document.getElementById(Vat).innerText=vat;
 
-    /********************* total**************************/
+    /********************* total*******/
     let total=subTotal+vat;
-    document.getElementById("total").innerText=total;
+    document.getElementById(Total).innerText=total;
 }
+
+/**************************function to take input for confirmation page **************/
+function takeValueToConfirm(bookingPageId,ConfirmPageId) {
+    var bookingValue =document.getElementById(bookingPageId).value;
+    document.getElementById(ConfirmPageId).innerText=bookingValue;
+}
+/**************************function for page transition ***********************/
+function pageDiplayTransition(idToDisappear,idToAppear) {
+    document.getElementById(idToDisappear).style.display="none";
+    document.getElementById(idToAppear).style.display="block";
+}
+
