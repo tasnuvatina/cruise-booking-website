@@ -58,13 +58,13 @@ nav ul li a:hover, a.active{
 }
 #booking{
     display: block;
-    padding: 20px;
+    
 }
 .booking-form{
     
     background-color: #fff;
     border: 1px solid #ddd;
-    padding: 10px;
+    padding: 20px;
     border-radius: 5px;
     float: right;
     width: 65%;
@@ -72,6 +72,7 @@ nav ul li a:hover, a.active{
 }
 .booking-form h3{
     margin: 10px 0px;
+    color: #E33741
 }
 .booking-form  .input-group{
     margin: 10px 0;
